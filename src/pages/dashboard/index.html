@@ -27,15 +27,15 @@
           
           <div class="auth-container">
             <div class="auth-profile-container">
-              <p>G</p>
+              <p class="auth-username-single"></p>
             </div>
             <div>
-              <p class="auth-username">Godstime Pious</p>
-              <p>godstimepious33</p>
+              <p class="auth-username"></p>
+              <p class="auth-user-email"></p>
             </div>
           </div>
           
-          <button class="auth-logout">Logout</button>
+          <button id="js-logout-btn" class="auth-logout">Logout</button>
         </div>
 
         <div class="task-input-container">
@@ -118,7 +118,9 @@
         <p>Your mind will answer most questions if you learn to relax and wait for the answer.</p>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+    <script src="../../js/auth/logout.js"></script>
+    <script src="../../js/dashboard.js"></script>
 
-    <script type="module" src="../../js/task.js"></script>
   </body>
 </html>
