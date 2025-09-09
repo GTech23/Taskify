@@ -170,6 +170,8 @@ body {
 .task-desc {
   resize: none;
   min-height: 200px;
+  background-color: transparent;
+  color: white;
 }
 
 .select-date-container {
@@ -204,4 +206,84 @@ body {
 
 .task-add-btn:hover {
   background-color: #007bff;
+}
+
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  background-color: #1e1e29;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.todo-item:hover {
+  background-color: #2a2a2a;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-title {
+  margin: 0;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.todo-due-date {
+  font-size: 14px;
+  color: #bbbbbb;
+}
+
+.todo-description {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #dddddd;
+}
+
+
+.todo-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Complete button */
+.btn-complete {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.btn-complete:hover {
+  background-color: #1b5e20;
+}
+
+/* Delete button */
+.btn-delete {
+  background-color: #c62828;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #8e0000;
 }

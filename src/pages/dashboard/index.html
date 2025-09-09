@@ -45,6 +45,7 @@
               type="text"
               name="title"
               class="task-input"
+              id="js-task-input-title"
               placeholder="Task title..."
               required
             />
@@ -53,6 +54,7 @@
             <textarea
               name="description"
               class="task-desc"
+              id="js-task-input-desc"
               placeholder="Task description..."
               rows="2"
             ></textarea>
@@ -60,12 +62,11 @@
             <!-- Container for select and date to be side by side -->
             <div class="select-date-container">
               <!-- Task Category Dropdown -->
-              <select name="category" class="task-dropdown" required>
-                <option value="" disabled selected>Select category</option>
-                <option value="work">Work</option>
-                <option value="personal">Personal</option>
-                <option value="school">School</option>
-                <option value="other">Other</option>
+              <select name="priority" class="task-dropdown" id="js-task-dropdown" required>
+                <option value="" disabled selected>Select priority</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
               </select>
 
               <!-- Due Date -->
@@ -73,12 +74,13 @@
                 type="date"
                 name="due-date"
                 class="task-date"
+                id="js-task-date"
                 required
               />
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="task-add-btn">Add Task</button>
+            <button type="submit" class="task-add-btn" id="js-task-add-btn">Add Task</button>
           </form>
 
         </div>
@@ -90,7 +92,7 @@
           <h3 class="task-title">My Task</h3>
         </div>
 
-        <div class="task-container">
+         <div class="task-container">
           <img src="../../assets/no-task.svg" width="400px" alt="" />
 
           <div>
@@ -100,7 +102,13 @@
               day ahead.
             </p>
           </div>
-        </div>
+        </div> 
+
+       <ul class="todo-list" id="todo-container">
+
+
+      </ul>
+
 
 
       </div>
@@ -111,6 +119,6 @@
       </div>
     </div>
 
-    <script type="module" src=""></script>
+    <script type="module" src="../../js/task.js"></script>
   </body>
 </html>
