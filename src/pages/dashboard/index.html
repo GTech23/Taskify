@@ -21,7 +21,69 @@
   </head>
   <body>
     <div class="grid-container">
-      <div class="grid-left"></div>
+      <div class="grid-left">
+
+        <div>
+          
+          <div class="auth-container">
+            <div class="auth-profile-container">
+              <p>G</p>
+            </div>
+            <div>
+              <p class="auth-username">Godstime Pious</p>
+              <p>godstimepious33</p>
+            </div>
+          </div>
+          
+          <button class="auth-logout">Logout</button>
+        </div>
+
+        <div class="task-input-container">
+          <form class="task-form">
+            <!-- Task Title -->
+            <input
+              type="text"
+              name="title"
+              class="task-input"
+              placeholder="Task title..."
+              required
+            />
+
+            <!-- Task Description -->
+            <textarea
+              name="description"
+              class="task-desc"
+              placeholder="Task description..."
+              rows="2"
+            ></textarea>
+
+            <!-- Container for select and date to be side by side -->
+            <div class="select-date-container">
+              <!-- Task Category Dropdown -->
+              <select name="category" class="task-dropdown" required>
+                <option value="" disabled selected>Select category</option>
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="school">School</option>
+                <option value="other">Other</option>
+              </select>
+
+              <!-- Due Date -->
+              <input
+                type="date"
+                name="due-date"
+                class="task-date"
+                required
+              />
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="task-add-btn">Add Task</button>
+          </form>
+
+        </div>
+      </div>
+
       <div class="grid-middle">
         <div class="grid-header">
           <img src="../../assets/taskify.svg" alt="taskify logo" width="40px" />
@@ -40,12 +102,13 @@
           </div>
         </div>
 
-        <div class="task-input-container">
-          <input type="text" class="task-input" placeholder="Add task..." />
-          <button class="task-add-btn">+</button>
-        </div>
+
       </div>
-      <div class="grid-right"></div>
+      <div class="grid-right">
+        <img src="../../assets/rest.svg" alt="">
+        <h3>Time to Relax</h3>
+        <p>Your mind will answer most questions if you learn to relax and wait for the answer.</p>
+      </div>
     </div>
 
     <script type="module" src=""></script>

@@ -11,7 +11,7 @@ AUTH_FORM.addEventListener("submit", async (e) => {
     {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
       },
       body: JSON.stringify({
         username: USERNAME_EL.value,
