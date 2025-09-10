@@ -16,6 +16,7 @@ body {
   flex-direction: column;
   gap: 1.4rem;
   background-color: #16161e;
+  overflow-y: scroll;
 }
 
 .grid-header {
@@ -24,7 +25,7 @@ body {
   gap: 1.4rem;
   background-color: #27293d;
   border-radius: 10px;
-  padding: 0.4rem;
+  padding: 0.4rem;;
 }
 
 .grid-header > h3 {
@@ -209,81 +210,70 @@ body {
 }
 
 
-.todo-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+  button {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
-.todo-item {
-  background-color: #1e1e29;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 16px;
-  transition: background-color 0.3s ease;
-}
+  button:hover {
+    background-color: #0056b3;
+  }
 
-.todo-item:hover {
-  background-color: #2a2a2a;
-}
+  .task {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 5px solid #007bff;
+  }
 
-.todo-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .task.completed {
+    border-left-color: green;
+    background-color: #e6ffe6;
+    text-decoration: line-through;
+  }
 
-.todo-title {
-  margin: 0;
-  font-size: 18px;
-  color: #ffffff;
-}
+  .task h3 {
+    margin: 0 0 5px 0;
+    color: #333;
+  }
 
-.todo-due-date {
-  font-size: 14px;
-  color: #bbbbbb;
-}
+  .task p {
+    margin: 4px 0;
+    color: #555;
+  }
 
-.todo-description {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #dddddd;
-}
+  .actions {
+    margin-top: 10px;
+  }
 
+  .actions button {
+    margin-right: 10px;
+    background-color: #6c757d;
+  }
 
-.todo-actions {
-  margin-top: 12px;
-  display: flex;
-  gap: 10px;
-}
+  .actions button:hover {
+    background-color: #5a6268;
+  }
 
-button {
-  padding: 8px 12px;
-  font-size: 14px;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
+  .actions button:nth-child(2) {
+    background-color: #28a745; /* Complete */
+  }
 
-/* Complete button */
-.btn-complete {
-  background-color: #2e7d32;
-  color: white;
-}
+  .actions button:nth-child(2):hover {
+    background-color: #218838;
+  }
 
-.btn-complete:hover {
-  background-color: #1b5e20;
-}
+  .actions button:nth-child(3) {
+    background-color: #dc3545; /* Delete */
+  }
 
-/* Delete button */
-.btn-delete {
-  background-color: #c62828;
-  color: white;
-}
-
-.btn-delete:hover {
-  background-color: #8e0000;
-}
+  .actions button:nth-child(3):hover {
+    background-color: #c82333;
+  }
