@@ -28,7 +28,9 @@ document.getElementById('form-auth-login').addEventListener('submit', async (e) 
       localStorage.setItem('token', token);
       errorEl.style.color = 'green'
       errorEl.innerHTML = result.message;
-       window.location = 'http://127.0.0.1:5500/src/pages/dashboard/index.html'
+      setTimeout(() => {
+        window.location = 'http://127.0.0.1:5500/src/pages/dashboard/index.html'
+      }, 3000)
     }
   } catch (error) {
     console.log(error);
