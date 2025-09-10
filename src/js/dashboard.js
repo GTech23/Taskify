@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
     const username = document.querySelector('.auth-username').innerHTML = decodedToken.username
 
     userEmailEl.innerHTML = decodedToken.email;
-   
+   getAllTask();
 });
 
 const taskList = [];
@@ -42,6 +42,7 @@ async function getAllTask() {
         taskContainer.style.display = 'none'
         let taskHTML = ''
         tasks?.map((task, i) => {
+            console.log(task)
             taskHTML += `
                 <div class="task">
       <h3>${task.title}</h3>
@@ -49,8 +50,8 @@ async function getAllTask() {
       <p><strong>Due Date:</strong> ${new Date(task.dueDate).toLocaleString().split(',')[0]}</p>
       <div class="actions">
         <button>Edit</button>
-        <button>Complete</button>
-        <button>Delete</button>
+        <button data-taskId=${task._id}>Complete</button>
+        <button onClick='deleteTask(this)' data-taskId=${task._id}>Delete</button>
       </div>
     </div>
 
@@ -59,7 +60,7 @@ async function getAllTask() {
         })
 
         todoContainer.innerHTML = taskHTML
-         getAllTask()
+        
          
         if(tasks.length === 0){
             taskContainer.style.display = 'flex'
@@ -97,7 +98,9 @@ taskForm.addEventListener('submit', async (e) => {
         priority: priority,
         dueDate: dueDate
     }
-    const response = await fetch('https://taskify-backend-w1ye.onrender.com/task/create', {
+
+    try {
+         const response = await fetch('https://taskify-backend-w1ye.onrender.com/task/create', {
         method: 'POST',
         headers: {
             "Content-Type": 'application/json',
@@ -114,7 +117,39 @@ taskForm.addEventListener('submit', async (e) => {
     }
 
     const result = await response.json();
-    console.log(result)
+    } catch (error) {
+        
+    }
+   
+    getAllTask()
 })
 
-getAllTask()
+
+//{"error":"Task 68c1b89e8909cd89038a59e0 not found"}
+
+async function deleteTask(button) {
+    const taskId = button.dataset.taskid
+    try {
+        const res = await fetch(`https://taskify-backend-w1ye.onrender.com/task/${taskId}`, {
+            method: 'DELETE',
+            headers:{
+                authorization: `Bearer ${token}`,
+                contentType: 'application/json'
+            }
+        })
+
+        if(!res.ok){
+            throw new Error('Something went wrong with the request');
+        }
+
+        const result = await res.json();
+        console.log(result);
+
+
+    } catch (error) {
+        console.log(error)    
+    }
+
+    console.log(`Task with ID ${taskId} is deleted`)
+    
+}
